@@ -1,5 +1,6 @@
-package org.codice.testify.actions;
+package org.codice.testify.actions.generatenonce;
 
+import org.codice.testify.actions.generatenonce.GenerateNonceAction;
 import org.codice.testify.objects.AllObjects;
 import org.codice.testify.objects.TestProperties;
 import org.junit.Test;

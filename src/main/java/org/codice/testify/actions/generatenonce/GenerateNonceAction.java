@@ -14,22 +14,19 @@
  *    limitations under the License.
  */
 
-package org.codice.testify.actions;
+package org.codice.testify.actions.generatenonce;
 
+import org.codice.testify.actions.Action;
 import org.codice.testify.objects.AllObjects;
 import org.codice.testify.objects.TestifyLogger;
 import org.codice.testify.objects.TestProperties;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
-import java.security.NoSuchAlgorithmException;
-import java.security.SecureRandom;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Random;
 
 /**
  * The GenerateNonceAction class is a Testify Action service for generating a nonce value
@@ -62,6 +59,7 @@ public class GenerateNonceAction implements BundleActivator, Action {
         // Add nonce to testProperties
         TestifyLogger.debug("Storing nonce value: " + nonce + " in property: " + s, this.getClass().getSimpleName());
         testProperties.addProperty(s, nonce);
+        AllObjects.setObject("testProperties", testProperties);
     }
 
     private String generateNonce() {
