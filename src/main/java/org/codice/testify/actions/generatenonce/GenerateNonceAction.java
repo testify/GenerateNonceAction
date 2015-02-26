@@ -65,14 +65,8 @@ public class GenerateNonceAction implements BundleActivator, Action {
     private String generateNonce() {
         // Generate Nonce value
         TestifyLogger.debug("Generating nonce using current time in milliseconds", this.getClass().getSimpleName());
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-M-yyyy hh:mm:ss");
-        String dateInString = "22-01-2015 10:20:56";
-        Date date = null;
-        try {
-            date = sdf.parse(dateInString);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        Date date = new Date();
+
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
 
