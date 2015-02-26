@@ -58,7 +58,7 @@ public class GenerateNonceAction implements BundleActivator, Action {
 
         // Add nonce to testProperties
         TestifyLogger.debug("Storing nonce value: " + nonce + " in property: " + s, this.getClass().getSimpleName());
-        testProperties.addProperty(s, nonce);
+        testProperties.replaceProperty(s, nonce);
         AllObjects.setObject("testProperties", testProperties);
     }
 
